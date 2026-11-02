@@ -1,18 +1,26 @@
-# Titanic Survival — Exploratory Data Analysis
 
-## Overview
 
-This project explores the Titanic passenger dataset to understand which passenger characteristics were associated with survival.
+# Titanic Dataset – Exploratory Data Analysis
 
-The analysis uses Python, Pandas, NumPy, Matplotlib and Seaborn to inspect the data, investigate missing values, calculate summary statistics and visualize relationships between variables.
+## Project Overview
 
-## Objectives
+This project explores the Titanic passenger dataset to understand the factors associated with passenger survival. It uses Python, Pandas, Matplotlib, and Seaborn to perform data cleaning, statistical analysis, and data visualization.
 
-- Understand the structure and quality of the dataset.
-- Investigate missing values and potential data-quality issues.
-- Explore survival patterns by passenger class, gender, age and family size.
-- Examine the relationship between passenger fare and survival.
-- Communicate findings through clear visualizations.
+The objective is to identify patterns in survival based on passenger characteristics and explore relationships between multiple features.
+
+## Dataset
+
+The project uses the Titanic dataset containing information about 891 passengers, including:
+
+- Passenger class
+- Gender
+- Age
+- Number of siblings/spouses aboard
+- Number of parents/children aboard
+- Ticket fare
+- Cabin information
+- Port of embarkation
+- Survival status
 
 ## Tools and Technologies
 
@@ -23,34 +31,89 @@ The analysis uses Python, Pandas, NumPy, Matplotlib and Seaborn to inspect the d
 - Seaborn
 - Jupyter Notebook
 
+## Analysis Performed
+
+### 1. Data Cleaning and Exploration
+- Inspected dataset structure and dimensions.
+- Identified missing values.
+- Checked for duplicate records.
+- Created additional features such as `FamilySize` and `HasCabin`.
+
+### 2. Univariate and Bivariate Analysis
+Explored survival patterns based on:
+- Gender
+- Passenger class
+- Age
+- Family size
+- Fare
+- Port of embarkation
+- Cabin information
+
+### 3. Multivariate Analysis
+Investigated relationships between multiple passenger characteristics and survival:
+- Gender and passenger class vs survival
+- Age and gender vs survival
+- Age and passenger class vs survival
+
 ## Key Findings
 
-*To be finalized after completing the analysis.*
-
-- Overall survival rate: approximately 38.4%.
-- Female passengers had a substantially higher survival rate than male passengers.
-- Survival rates differed across passenger classes.
-- Higher fare groups had higher overall survival rates, although this relationship was less consistent when passenger class was considered.
+- The overall survival rate was approximately **38.38%**.
+- Female passengers had a considerably higher survival rate than male passengers.
+- First-class passengers had a higher survival rate than second- and third-class passengers.
+- Survivors were generally younger than non-survivors.
+- Passengers travelling in small family groups and those paying higher fares generally showed higher survival rates.
+- Multivariate analysis showed that female passengers had higher survival rates across all passenger classes.
+- Survivors had a lower average age than non-survivors across all three passenger classes.
 
 ## Project Structure
 
-- `titanic_eda.ipynb` — notebook containing the analysis and visualizations.
-- `data/` — location for the dataset, if included.
-- `images/` — selected visualizations.
-- `requirements.txt` — Python dependencies.
+```text
+titanic-eda/
+│
+├── data/
+│   └── train.csv
+│
+├── titanic_eda.ipynb
+├── titanic_practice.ipynb
+├── README.md
+├── requirements.txt
+└── .gitignore
+```
 
-## How to Run
+## How to Run the Project
 
-1. Clone or download this repository.
-2. Install the required packages using `pip install -r requirements.txt`.
-3. Obtain the Titanic dataset from the [official Kaggle competition page](https://www.kaggle.com/competitions/titanic/data).
-4. Place `train.csv` inside the `data/` folder, if your notebook is configured to read from that location.
-5. Open `titanic_eda.ipynb` in Jupyter Notebook or VS Code and run the cells.
+1. Clone the repository:
+
+   ```bash
+   git clone <your-repository-url>
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd titanic-eda
+   ```
+
+3. Install the required libraries:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Open the notebook:
+
+   ```bash
+   jupyter notebook titanic_eda.ipynb
+   ```
 
 ## Limitations
 
-This is an exploratory analysis. Observed relationships do not establish causation. Some groups contain relatively few passengers, and missing data may affect certain comparisons.
+- The dataset contains missing values, particularly in the Age and Cabin columns.
+- Some passenger groups have relatively few observations.
+- The analysis identifies associations but does not establish causation.
+- Some passenger characteristics may be related to one another.
 
-## Data Source
+## Conclusion
 
-[Kaggle — Titanic: Machine Learning from Disaster](https://www.kaggle.com/competitions/titanic/data)
+This project provided an opportunity to explore a real-world dataset through data cleaning, statistical analysis, and visualization. It helped identify important survival patterns and understand how multiple passenger characteristics were associated with survival.
+
